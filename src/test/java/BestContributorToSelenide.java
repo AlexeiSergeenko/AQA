@@ -8,7 +8,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class BestContributorToSelenide {
     @Test
-
     void andreiSolntsevShoudBeTheFirstContributor() {
         String browserSize = "400x400";
 
