@@ -4,8 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Configuration.baseUrl;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.*;
 
 public class TrivioTests {
    @BeforeAll
@@ -23,4 +23,9 @@ public class TrivioTests {
 
        $("#button_submit").click();
    }
+    @Test
+    void aviaSearch() {
+       $(".TopServiceSelect_navLink_ftWUt").click();
+       $(byText("что будем искать?"));
+    }
 }
