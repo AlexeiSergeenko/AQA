@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class BestContributorToSelenide {
     @Test
     void andreiSolntsevShoudBeTheFirstContributor() {
-        String browserSize = "400x400";
+//        String browserSize = "400x400";
 
         open("https://github.com/selenide/selenide");
     $("div.Layout-sidebar").$(byText("Contributors"))
