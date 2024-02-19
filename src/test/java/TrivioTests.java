@@ -16,7 +16,7 @@ public class TrivioTests {
 //     Configuration.browser = "edge";
    }
    @Test
-   void successfulAithorisation( ) {
+   void successfulAuthorisation( ) {
        open(baseUrl);
        $("#inputLogin").sendKeys("demo");
        $("#inputPassword").sendKeys("demo");
