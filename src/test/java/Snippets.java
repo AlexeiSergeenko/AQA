@@ -175,7 +175,6 @@ public class Snippets {
         $$("div").findBy(text("123")).click(); //  finds first
 
         // assertions
-        $$("").shouldHave(size(0));
         $$("").shouldBe(CollectionCondition.empty); // the same
 
         $$("").shouldHave(texts("Alfa", "Beta", "Gamma"));

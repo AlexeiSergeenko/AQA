@@ -22,15 +22,6 @@ public class CloseCookiePopup {
     }
 
     @Test
-    void pageObject() {
-        new LoginPO().loginWithUsernameAndPassword("user", "admin1234");
-        new HomePO().title.shouldHave(text("My Balance"));
-        new HomePO().showAccountBalance();
-
-    }
-
-
-    @Test
     void closeBasicAuth() {
         open("https://the-internet.herokuapp.com/basic_auth");
         actions().sendKeys(Keys.ESCAPE);

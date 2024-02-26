@@ -13,6 +13,4 @@ public class LoginPO {
         $("#password").setValue(password);
         $("#submit-btn").click();
     }
-
-
 }
