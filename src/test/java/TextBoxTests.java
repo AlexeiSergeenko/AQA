@@ -28,5 +28,4 @@ public class TextBoxTests {
         $("#output").shouldHave(text("Alexius"), text("alexius@mail.com"),
                     text("MyCurrentAddress"), text("HereIsMyPeremanentAddress"));
     }
-
 }
