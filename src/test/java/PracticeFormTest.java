@@ -4,17 +4,18 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
+import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class PracticeFormTest {
-    @BeforeAll
-    static void beforeAll() {
+//    @BeforeAll
+//    static void beforeAll() {
 //        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-    }
+//        Configuration.browserSize = "1920x1080";
+//    }
     @Test
     void fillFormTest() {
         open("https://demoqa.com/automation-practice-form");
@@ -42,13 +43,12 @@ public class PracticeFormTest {
 
         $("#currentAddress").setValue("Moscow, Russia, Velozavodskaya str.");
 
-        $("#react-select-3-input").setValue("NCR").pressEnter();
-        $("#react-select-4-input").setValue("Noida").pressEnter();
+        $("#stateCity-wrapper").$(byText("NCR")).click();
+        $("#city").$(byText("Noida")).click();
         $("#submit").click();
-//        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"),
-//                text("Alexei Sergeenko"), text("alexeisergeenko@gmail.com"), text("Male"), text("8109999999"),
-//                text("16 January, 2000"), text("Mat, P, Che"), text("Sports, Reading, Music"),
-//                text("Moscow, NCR, Noida"));
+
+        $(".modal-dialog").shouldHave(appear);
+        $(".modal-dialog").shouldHave(text("Thanks for submitting the form"));
 
     }
 }

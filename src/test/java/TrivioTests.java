@@ -29,3 +29,4 @@ public class TrivioTests {
        $(byText("что будем искать?"));
     }
 }
+
