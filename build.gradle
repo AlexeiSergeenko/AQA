@@ -1,5 +1,7 @@
 plugins {
     id 'java-library'
+    id 'java'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
 }
 
 repositories {
@@ -8,7 +10,7 @@ repositories {
 
 dependencies {
     testImplementation (
-            "com.codeborne:selenide:7.2.0",
+            "com.codeborne:selenide:7.2.1",
             "org.junit.jupiter:junit-jupiter:5.10.2",
             "org.slf4j:slf4j-simple:2.0.12"
     )

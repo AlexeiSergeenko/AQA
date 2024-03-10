@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selenide.open;
         boolean holdBrowserOpen = true;
         String browserSize = "1920x1080";
         baseUrl = "https://www.google.com/";
-        Configuration.browser = "edge";
+        Configuration.browser = "chrome";
 
     }
     @Test
