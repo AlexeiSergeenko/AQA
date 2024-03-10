@@ -7,8 +7,7 @@ import java.io.File;
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormTest {
 //    @BeforeAll
@@ -19,6 +18,7 @@ public class PracticeFormTest {
     @Test
     void fillFormTest() {
         open("https://demoqa.com/automation-practice-form");
+        executeJavaScript("$('footer').remove()");
 
         $("#firstName").setValue("Alexei");
         $("#lastName").setValue("Sergeenko");
@@ -28,7 +28,7 @@ public class PracticeFormTest {
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("July");
         $(".react-datepicker__year-select").selectOption("2000");
-        $(".react-datepicker__day--016").click();
+        $(".react-datepicker__day--015").click();
 
         $("#subjectsInput").setValue("Mat").pressEnter();
         $("#subjectsInput").setValue("P").pressEnter();
@@ -43,12 +43,14 @@ public class PracticeFormTest {
 
         $("#currentAddress").setValue("Moscow, Russia, Velozavodskaya str.");
 
+        $("#state").click();
         $("#stateCity-wrapper").$(byText("NCR")).click();
+
+        $("#city").click();
         $("#city").$(byText("Noida")).click();
         $("#submit").click();
 
         $(".modal-dialog").shouldHave(appear);
         $(".modal-dialog").shouldHave(text("Thanks for submitting the form"));
-
     }
 }
