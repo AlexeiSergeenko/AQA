@@ -89,7 +89,6 @@ public class Snippets {
 
         $("").setValue("text");
         $("").append("text");
-        $("").clear();
         $("").setValue(""); // clear
 
         $("div").sendKeys("c"); // hotkey c on element
