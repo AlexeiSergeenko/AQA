@@ -1,6 +1,8 @@
+import com.codeborne.selenide.ClickOptions;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import pages.RegistrationPage;
 
 import java.io.File;
 
@@ -10,15 +12,17 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormTest {
-//    @BeforeAll
-//    static void beforeAll() {
-//        Configuration.baseUrl = "https://demoqa.com";
-//        Configuration.browserSize = "1920x1080";
-//    }
+    @BeforeAll
+    static void beforeAll() {
+        Configuration.baseUrl = "https://demoqa.com";
+        Configuration.browserSize = "1920x1080";
+        Configuration.pageLoadStrategy = "eager";
+    }
+
     @Test
     void fillFormTest() {
-        open("https://demoqa.com/automation-practice-form");
-        executeJavaScript("$('footer').remove()");
+
+        new RegistrationPage().openPage();
 
         $("#firstName").setValue("Alexei");
         $("#lastName").setValue("Sergeenko");
@@ -48,9 +52,12 @@ public class PracticeFormTest {
 
         $("#city").click();
         $("#city").$(byText("Noida")).click();
+
+//        $("#submit").click(ClickOptions.usingJavaScript());
         $("#submit").click();
 
         $(".modal-dialog").shouldHave(appear);
         $(".modal-dialog").shouldHave(text("Thanks for submitting the form"));
+        sleep(5000);
     }
 }
