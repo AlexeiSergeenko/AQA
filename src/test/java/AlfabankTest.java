@@ -18,7 +18,7 @@ public class AlfabankTest {
 
     @Test
     void testAlfa() {
-        open("http://alfabank.ru");
+        open(baseUrl);
         $(byText("Вклады")).click();
         $(byLinkText("Альфа-Счёт")).click();
 
