@@ -31,9 +31,12 @@ public class AlfabankTest {
         $(byName("email")).click();
         $(byName("email")).setValue("mail@mail.com");
 
-//        $(".kgNor").shouldHave(appear);
-//        $(".kgNor").(value("Сергеенко Алексей Сергеевич"));
-//        $(".kgNor").(value("Сергеенко Алексей Сергеевич"));
+        $("#alfa #form").shouldHave(appear);
+        $("[value='Сергеенко']").shouldBe(visible);
+        $("[value='Алексей']").shouldBe(visible);
+        $("[value='Сергеевич']").shouldBe(visible);
+        $(byText("Мужской")).click();
+
         $("[data-test-id=button]").click();
         $("[data-test-id=sms-confirmation-modal]").shouldHave(appear);
         $("[data-test-id=sms-confirmation-modal]").shouldHave(text("Введите код из смс"),
