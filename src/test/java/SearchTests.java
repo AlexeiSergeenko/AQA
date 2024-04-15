@@ -4,10 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text; 
 import static com.codeborne.selenide.Configuration.baseUrl;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
- public class SearchTests {
+public class SearchTests {
     @BeforeAll
     static void beforeall() {
         boolean holdBrowserOpen = true;
@@ -19,7 +18,9 @@ import static com.codeborne.selenide.Selenide.open;
     @Test
     void successfulSearchTest( ) {
         open(baseUrl);
-        $("[name=q]").setValue("selenide").pressEnter();
+        $("[name=q]")
+                .setValue("selenide")
+                .pressEnter();
         $("[id=search]").shouldHave(text("https://selenide.org"));
     }
 }

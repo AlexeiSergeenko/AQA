@@ -2,7 +2,7 @@ import com.codeborne.selenide.ClickOptions;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import pages.RegistrationPage;
+
 
 import java.io.File;
 
@@ -21,8 +21,6 @@ public class PracticeFormTest {
 
     @Test
     void fillFormTest() {
-
-        new RegistrationPage().openPage();
 
         $("#firstName").setValue("Alexei");
         $("#lastName").setValue("Sergeenko");

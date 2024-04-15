@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class TrivioTests {
    @BeforeAll
    static void beforeall() {
-       boolean holdBrowserOpen = true;
+//       boolean holdBrowserOpen = true;
        String browserSize = "1920x1080";
        baseUrl = "https://login.trivio.ru/";
 //     Configuration.browser = "edge";
@@ -27,6 +27,6 @@ public class TrivioTests {
     void aviaSearch() {
        $(".TopServiceSelect_navLink_ftWUt").click();
        $(byText("что будем искать?"));
-    }
+   }
 }
 
